@@ -6,7 +6,7 @@ import countriesData from '../database/data.json';
 const Countries = () => {
   const [filteredCountries, setFilteredCountries] = useState(countriesData);
   return (
-    <div className=" bg-slate-100 px-14 dark:bg-gray-800">
+    <div className=" bg-slate-100 px-5 sm:px-14 dark:bg-gray-800">
       <Filters
         countries={countriesData}
         setFilteredCountries={setFilteredCountries}
