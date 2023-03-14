@@ -19,20 +19,44 @@ const SearchIcon = (props) => {
     );
   }
 
+  if (props.select) {
+    return (
+      <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
+        <svg
+          aria-hidden="true"
+          className="w-5 h-5 text-gray-500 dark:text-gray-400"
+          fill="currentColor"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fillRule="evenodd"
+            d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+            clipRule="evenodd"
+          ></path>
+        </svg>
+      </div>
+    );
+  }
+
   return (
-    <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
+    <div
+      onClick={() => props.setRegion('')}
+      className="absolute inset-y-0 right-0 flex items-center pr-3 cursor-pointer"
+    >
       <svg
-        aria-hidden="true"
-        className="w-5 h-5 text-gray-500 dark:text-gray-400"
-        fill="currentColor"
-        viewBox="0 0 20 20"
         xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        strokeWidth={1.5}
+        stroke="currentColor"
+        className="w-5 h-5 text-gray-500 dark:text-gray-400"
       >
         <path
-          fillRule="evenodd"
-          d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
-          clipRule="evenodd"
-        ></path>
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          d="M6 18L18 6M6 6l12 12"
+        />
       </svg>
     </div>
   );
